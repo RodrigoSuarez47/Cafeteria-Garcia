@@ -7,13 +7,17 @@ let NavBar = () => {
                 <ul className="navbar-nav container-fluid d-flex flex-row align-items-center justify-content-around">
                     <li className="nav-item">
                         <a className="navbar-brand" href="/">
-                            <img className="img-fluid" src="src\components\NavBar\assets\logoNegro.png" alt="Logo" height="100" width="100" /></a>
+                            <img className="img-fluid" src="/src/components/NavBar/assets/logoNegro.png" alt="Logo" height="100" width="100" />
+                        </a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/">Inicio</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="/Productos">Productos</a>
+                        <a className="nav-link" href="/Categoria/Cafe">Cafés</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/Categoria/Cafetera">Cafeteras</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#"><CartWidget /></a>

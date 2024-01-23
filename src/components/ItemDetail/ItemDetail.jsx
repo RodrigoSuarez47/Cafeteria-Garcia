@@ -6,7 +6,6 @@ const ItemDetail = ({ Id, Nombre, Precio, Variedad, Imagen, Stock, Descripcion }
             <img src={Imagen} className="card-img-top" alt={Nombre} />
             <div className="card-body d-flex flex-column align-items-center">
                 <h5 className="card-title">{Nombre}</h5>
-                <p className="card-text">Variedad: {Variedad}</p>
                 <p className="card-text text-center">{Descripcion}</p>
                 <p className="card-text">Precio: ${Precio}</p>
             </div>

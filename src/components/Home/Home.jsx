@@ -20,7 +20,8 @@ let Home = ({ greeting }) => {
                 <p>
                     Explora nuestro intuitivo espacio en línea y descubre la diversidad de nuestro menú.<br /> No solo ofrecemos una variedad de café, sino también complementos y accesorios que harán de cada pausa para el café un momento especial. <br />Además, mantente conectado con nosotros a través de eventos y promociones exclusivas, diseñadas para celebrar la cultura del café.
                 </p>
-                <a href="/Productos" className="btn btn-secondary btn-lg my-2">Conoce nuestros productos</a>
+                <a href="/Categoria/Cafe" className="btn btn-secondary btn-lg my-2 mx-5">Ver Cafés</a>
+                <a href="/Categoria/Cafetera" className="btn btn-secondary btn-lg my-2 mx-5">Ver Cafeteras</a>
             </div>
         </div>
     )
