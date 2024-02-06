@@ -20,7 +20,7 @@ let NavBar = () => {
                         <a className="nav-link" href="/Categoria/Cafetera">Cafeteras</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"><CartWidget /></a>
+                        <a className="nav-link" href="/Cart"><CartWidget /></a>
                     </li>
                 </ul>
             </nav>
