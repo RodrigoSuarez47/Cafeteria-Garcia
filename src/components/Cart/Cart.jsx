@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
 import { CartContext } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 
@@ -28,7 +29,7 @@ const Cart = () => {
             <h4 className="py-4 text-center">Total: ${costoTotal}<br></br></h4>
             <div className='d-flex align-items-center justify-content-center'>
                 <button onClick={handleVaciarCarro} className='btn btn-secondary mx-5 my-2 p-2'>Vaciar Carrito</button>
-                <a href="/checkout" className='btn btn-primary mx-5 my-2 p-2'>Finalizar Compra</a>
+                <Link to="/checkout" className='btn btn-primary mx-5 my-2 p-2'>Finalizar Compra</Link>
             </div>
         </>
     );

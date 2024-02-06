@@ -22,12 +22,7 @@ const Checkout = () => {
             };
             const batch = writeBatch(BD);
             const sinStock = [];
-            const ids = carro.map(prod => prod.id).filter(id => id); // Filtrar valores nulos o no válidos
-
-            if (ids.length === 0) {
-                console.log("El arreglo de IDs está vacío o contiene valores no válidos.");
-                return;
-            }
+            const ids = carro.map(prod => prod.Id)
 
             const productsCollection = query(collection(BD, 'productos'), where(documentId(), 'in', ids));
             const querySnapshot = await getDocs(productsCollection);
@@ -35,8 +30,8 @@ const Checkout = () => {
             docs.forEach(doc => {
                 const fields = doc.data();
                 const stockDb = fields.stock;
-                const productsAddedToCart = carro.find(prod => prod.id === doc.id); // Corregido de 'cart' a 'carro'
-                const prodQuantity = productsAddedToCart.cantidad; // Corregido de 'quantity' a 'cantidad'
+                const productsAddedToCart = carro.find(prod => prod.Id === doc.id);
+                const prodQuantity = productsAddedToCart.quantity;
                 if (stockDb >= prodQuantity) {
                     batch.update(doc.ref, { stock: stockDb - prodQuantity });
                 } else {
