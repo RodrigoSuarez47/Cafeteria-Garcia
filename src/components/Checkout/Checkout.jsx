@@ -29,9 +29,9 @@ const Checkout = () => {
             const { docs } = querySnapshot;
             docs.forEach(doc => {
                 const fields = doc.data();
-                const stockDb = fields.stock;
+                const stockDb = fields.Stock;
                 const productsAddedToCart = carro.find(prod => prod.Id === doc.id);
-                const prodQuantity = productsAddedToCart.quantity;
+                const prodQuantity = productsAddedToCart.cantidad;
                 if (stockDb >= prodQuantity) {
                     batch.update(doc.ref, { stock: stockDb - prodQuantity });
                 } else {
@@ -55,21 +55,31 @@ const Checkout = () => {
     };
 
     if (loading) {
-        return <h1>Se está generando su orden...</h1>;
+        return (
+            <div className='my-5 text-center'>
+                <h2>Se está generando su orden...</h2>
+            </div>
+        )
+
+
     }
 
     if (orderId) {
         return (
             <>
-                <h1>El número de su orden es:</h1>
-                <h2>{orderId}</h2>
+                <div className='my-5 text-center'>
+                    <h3>El identificador de su orden es:</h3>
+                    <h4>{orderId}</h4>
+                    <h4>Gracias por su compra</h4>
+                </div>
+
             </>
         );
     }
 
     return (
-        <div>
-            <h2>Checkout</h2>
+        <div className='container w-25'>
+            <h2 className='text-center'>Checkout</h2>
             <CheckoutForm onConfirm={crearOrden}></CheckoutForm>
         </div>
     );

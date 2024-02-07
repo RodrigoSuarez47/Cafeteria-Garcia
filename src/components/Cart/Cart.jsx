@@ -29,7 +29,7 @@ const Cart = () => {
             <h4 className="py-4 text-center">Total: ${costoTotal}<br></br></h4>
             <div className='d-flex align-items-center justify-content-center'>
                 <button onClick={handleVaciarCarro} className='btn btn-secondary mx-5 my-2 p-2'>Vaciar Carrito</button>
-                <Link to="/checkout" className='btn btn-primary mx-5 my-2 p-2'>Finalizar Compra</Link>
+                <Link to="/checkout" className='btn btn-success mx-5 my-2 p-2'>Finalizar Compra</Link>
             </div>
         </>
     );

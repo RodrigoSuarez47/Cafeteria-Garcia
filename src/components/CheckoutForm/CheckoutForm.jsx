@@ -17,7 +17,7 @@ const CheckoutForm = ({ onConfirm }) => {
 
     return (
         <>
-            <form onSubmit={handleConfirm}>
+            <form onSubmit={handleConfirm} className="container">
                 <div className="mb-3">
                     <label htmlFor="Nombre" className="form-label">Nombre</label>
                     <input type="text" className="form-control" id="Nombre" value={nombre} onChange={({ target }) => setNombre(target.value)} />
@@ -30,7 +30,9 @@ const CheckoutForm = ({ onConfirm }) => {
                     <label htmlFor="Email" className="form-label">Email</label>
                     <input type="email" className="form-control" id="Email" value={email} onChange={({ target }) => setEmail(target.value)} />
                 </div>
-                <button type="submit" className="btn btn-success">Enviar Orden</button>
+                <div className="text-center">
+                    <button type="submit" className="btn btn-success">Enviar Orden</button>
+                </div>
             </form>
         </>
     )

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from 'react-router-dom';
 
 let ItemCount = ({ stock, valorInicial, onAdd }) => {
     let [cantidad, setCantidad] = useState(valorInicial)
@@ -22,8 +23,11 @@ let ItemCount = ({ stock, valorInicial, onAdd }) => {
                 <button type="button" className="btn">{cantidad}</button>
                 <button type="button" className="btn btn-secondary" onClick={incrementar}>+</button>
             </div>
+            <div className="text-center">
+                <button type="button" className="btn btn-success" onClick={() => onAdd(cantidad)} disabled={!stock}>Agregar al carrito</button>
+            </div>
             <div>
-                <button type="button" className="btn btn-secondary" onClick={() => onAdd(cantidad)} disabled={!stock}>Agregar al carrito</button>
+                <Link to='/Categoria/Cafe' className='btn btn-secondary my-2'>Volver</Link>
             </div>
         </div>
     )

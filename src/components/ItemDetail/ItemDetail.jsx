@@ -31,12 +31,18 @@ const ItemDetail = ({ Id, Nombre, Precio, Imagen, Stock, Descripcion }) => {
             <div className='text-center my-2'>
                 {
                     cantidadAgregada > 0 ? (
-                        <Link to='/Cart' className='btn btn-secondary'>Terminar Compra</Link>
+                        <>
+                            <Link to='/Cart' className='btn btn-success'>Terminar Compra</Link>
+                            <br />
+                            <Link to='/Categoria/Cafe' className='btn btn-secondary my-2'>Volver</Link>
+                        </>
                     )
-                        : (< ItemCount valorInicial={1} stock={Stock} onAdd={clickEnAgregar} />)
+                        : (<>
+                            < ItemCount valorInicial={1} stock={Stock} onAdd={clickEnAgregar} />
+                        </>)
                 }
             </div>
-        </div>
+        </div >
     )
 }
 
